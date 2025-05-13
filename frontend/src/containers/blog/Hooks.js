@@ -20,7 +20,7 @@ export const BlogHooks = () => {
             // getAllBlogsApiCall()
             navigate('/dashboard')
         } else {
-
+            console.log("# createBlogApiCall failed")
         }
     };
 
@@ -33,7 +33,7 @@ export const BlogHooks = () => {
         if (res?.status === 200) {
             setBlogs(res?.data)
         } else {
-
+            setBlogs([])
         }
     };
 
@@ -64,7 +64,7 @@ export const BlogHooks = () => {
             // getAllBlogsApiCall()
             navigate('/dashboard')
         } else {
-            
+            console.log("# updateBlogApiCall failed")
         }
     };
 
@@ -76,9 +76,8 @@ export const BlogHooks = () => {
         const res = await doDeleteApiCall(data);
         if (res?.status === 200) {
             getAllBlogsApiCall()
-            console.log("# blog deleted")
         } else {
-
+            console.log("# deleteBlogApiCall failed")
         }
     };
 

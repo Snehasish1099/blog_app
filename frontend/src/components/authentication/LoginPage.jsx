@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import styles from './authStyles'
 
 const LoginPage = ({ LoginApiCall, error }) => {
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [form, setForm] = useState({ email: '', password: '' })
 
   const handleChange = e => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value })
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(form, "# form")
-    await LoginApiCall(form);
+    await LoginApiCall(form)
   };
 
   return (

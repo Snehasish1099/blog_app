@@ -37,7 +37,7 @@ export const doPostApiCall = async (data) => {
             )
             .then((result) => {
                 if (result.token) {
-                    localStorage.setItem("token", result.token);
+                    localStorage.setItem("token", result.token)
                 }
                 resolve(result);
             })
@@ -62,7 +62,7 @@ export const doDeleteApiCall = async (data) => {
         fetch(data.url, reqstValues)
             .then((response) => response.json())
             .then((data) => resolve(data))
-            .catch((error) => reject(error));
+            .catch((error) => reject(error))
     });
 };
 
@@ -84,7 +84,7 @@ export const doPutApiCall = async (data) => {
             .then((result) => result.json())
             .then((result) => {
                 if (result.token) {
-                    localStorage.setItem("token", result.token);
+                    localStorage.setItem("token", result.token)
                 }
                 resolve(result);
             })

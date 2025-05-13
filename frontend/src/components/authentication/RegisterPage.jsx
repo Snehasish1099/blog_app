@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import styles from './authStyles'
 
 const RegisterPage = ({ RegistrationApiCall, error }) => {
-    const [form, setForm] = useState({ username: '', email: '', phone_number: '', password: '', confirmPassword: '' });
+    const [form, setForm] = useState({ username: '', email: '', phone_number: '', password: '', confirmPassword: '' })
 
     const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
+        setForm({ ...form, [e.target.name]: e.target.value })
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(form, "# form")
-        await RegistrationApiCall(form);
+        await RegistrationApiCall(form)
     };
 
     return (

@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import DashboardPage from '../../components/blogs/DashboardPage'
-import { AuthHooks } from '../auth/Hooks'
 import AuthContext from '../../utils/AuthContext'
 import { BlogHooks } from './Hooks'
 

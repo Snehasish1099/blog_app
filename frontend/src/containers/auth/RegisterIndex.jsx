@@ -1,6 +1,6 @@
 import React from 'react'
-import RegisterPage from '../../components/authentication/RegisterPage'
-import { AuthHooks } from './Hooks'
+import RegisterPage from '../../components/authentication/RegisterPage';
+import { AuthHooks } from './Hooks';
 
 const RegisterIndex = () => {
 

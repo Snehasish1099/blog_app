@@ -38,26 +38,28 @@ export const AuthHooks = () => {
                 navigate('/login')
             }
         } catch (error) {
-            // setError(error)
+            console.error(error)
         }
     }
 
     // Login API call 
     const LoginApiCall = async (formdata) => {
-        const data = {
-            url: `${import.meta.env.VITE_API_URL}/auth/login`,
-            bodyData: {
-                email: formdata?.email,
-                password: formdata?.password
+        try {
+            const data = {
+                url: `${import.meta.env.VITE_API_URL}/auth/login`,
+                bodyData: {
+                    email: formdata?.email,
+                    password: formdata?.password
+                }
             }
-        }
 
-        const res = await doPostApiCall(data)
-        if (res?.status === 200) {
-            loginData(res.data, res.token)
-            navigate(`/dashboard`)
-        } else {
-
+            const res = await doPostApiCall(data)
+            if (res?.status === 200) {
+                loginData(res.data, res.token)
+                navigate(`/dashboard`)
+            }
+        } catch (error) {
+            console.error(error)
         }
     }
 

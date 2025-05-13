@@ -5,9 +5,9 @@ import DashboardIndex from '../containers/blog/DashboardIndex';
 import BlogForm from '../components/blogs/BlogForm';
 
 const ProtectedRoute = ({ children }) => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token')
 
-    return token ? children : <Navigate to="/login" />;
+    return token ? children : <Navigate to="/login" />
 }
 
 const router = createBrowserRouter(

@@ -14,7 +14,7 @@ const DashboardPage = ({ user, logout, blogs, deleteBlogApiCall }) => {
         const isConfirmed = window.confirm(`Are you sure you want to delete the blog ${blog?.title}?`)
 
         if (isConfirmed) {
-            await deleteBlogApiCall(blog?._id);
+            await deleteBlogApiCall(blog?._id)
         }
     };
 
@@ -24,10 +24,10 @@ const DashboardPage = ({ user, logout, blogs, deleteBlogApiCall }) => {
             <div style={dashBoardBlog.header}>
                 <h2 style={dashBoardBlog.heading}>Welcome, {user?.username}</h2>
                 <div>
-                    <button style={dashBoardBlog.button} onClick={logoutFunc}>Logout</button>
                     <Link to="/create">
                         <button style={{ ...dashBoardBlog.button, ...dashBoardBlog.createBtn }}>Create New Post</button>
                     </Link>
+                    <button style={dashBoardBlog.button} onClick={logoutFunc}>Logout</button>
                 </div>
             </div>
 

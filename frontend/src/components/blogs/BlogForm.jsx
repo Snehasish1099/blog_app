@@ -5,39 +5,39 @@ import { BlogHooks } from '../../containers/blog/Hooks';
 import { blogFormStyle } from './blogStyles';
 
 const BlogForm = () => {
-    const [form, setForm] = useState({ title: '', content: '' });
-    const { user } = useContext(AuthContext);
-    const params = useParams();
+    const [form, setForm] = useState({ title: '', content: '' })
+    const { user } = useContext(AuthContext)
+    const params = useParams()
 
-    const { createBlogApiCall, updateBlogApiCall, getBlogByIdApiCall } = BlogHooks();
+    const { createBlogApiCall, updateBlogApiCall, getBlogByIdApiCall } = BlogHooks()
 
-    const isEdit = Boolean(params.id);
+    const isEdit = Boolean(params.id)
 
     useEffect(() => {
         const getBlogDataForEdit = async () => {
             if (!isEdit) {
-                return;
+                return
             }
 
-            const blog = await getBlogByIdApiCall(params.id);
+            const blog = await getBlogByIdApiCall(params.id)
             if (blog) {
-                setForm({ title: blog.title, content: blog.content });
+                setForm({ title: blog.title, content: blog.content })
             }
         };
 
-        getBlogDataForEdit();
-    }, [params.id]);
+        getBlogDataForEdit()
+    }, [params.id])
 
     const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+        setForm({ ...form, [e.target.name]: e.target.value })
+    }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         if (isEdit) {
-            await updateBlogApiCall(params.id, form);
+            await updateBlogApiCall(params.id, form)
         } else {
-            await createBlogApiCall(form);
+            await createBlogApiCall(form)
         }
     };
 
