@@ -17,15 +17,14 @@ npm install
 nodemon index.js
 
 pm2 start index.js
+```
 
-
-.env file
-MONGO_URI=monodb-secret-key
+### .env file in backend folder
+MONGO_URI=mongodb-secret-key
 JWT_SECRET=jwt-secret
 PORT=8000
 DB_NAME=blogsapp
 SESSION_SECRET=session-secret
-```
 
 ### 2. Frontend Setup
 ```bash
@@ -35,13 +34,13 @@ npm run dev || yarn dev
 npm run build || yarn build
 
 serve -s dist -l 5173
-
-
-.env file
-VITE_API_URL=http://localhost:8000/api
 ```
 
-## 📸 Screenshots
+### .env file in frontend folder
+VITE_API_URL=http://localhost:8000/api
+
+
+## Screenshots
 ![Login Page](./screenshots/login.png)
 ![Registration Page](./screenshots/register.png)
 ![Dashboard Page](./screenshots/dashboard.png)
