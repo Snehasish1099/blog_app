@@ -20,11 +20,13 @@ pm2 start index.js
 ```
 
 ### .env file in backend folder
+```bash
 MONGO_URI=mongodb-secret-key
 JWT_SECRET=jwt-secret
 PORT=8000
 DB_NAME=blogsapp
 SESSION_SECRET=session-secret
+```
 
 ### 2. Frontend Setup
 ```bash
@@ -37,8 +39,9 @@ serve -s dist -l 5173
 ```
 
 ### .env file in frontend folder
+```bash
 VITE_API_URL=http://localhost:8000/api
-
+```
 
 ## Screenshots
 ![Login Page](./screenshots/login.png)
